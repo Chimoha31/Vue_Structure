@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+
+  <body>
+    <div class="frame">
+      <h1 class="frame__title">JavaScript</h1>
+
+      <div class="frame__inner">
+        <div id="app">
+          <p class="alert" v-if="out_survice">現在は営業時間外</p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script>
+          const today = new Date();
+          let hour = today.getHours();
+
+          var app = new Vue({
+            el: "#app",
+            data: {
+              out_survice: (hour > 20),
+            }
+          });
+        </script>
+      
+      </div>
+    </div>
+  </body>
+</html>
